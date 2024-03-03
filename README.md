@@ -17,6 +17,26 @@ Player position & song duration are in milliseconds to allow for more customisab
 
 You may need to convert the string back into a JSON object when your websocket server receives the data, for example using `const json = JSON.parse(data)` for Node.js servers.
 
+Simple example using the `ws` module with the `WebSocketServer` constructor:
+```js
+const { WebSocketServer } = require("ws")
+const wss = new WebSocketServer({ port: 22157 })
+
+wss.on("connection", socket => {
+    console.log("Client connected")
+
+    socket.on("message", data => {
+        const json = JSON.parse(data)
+        console.log(`Stringified data received, converting back to JSON:`, json)
+        console.log(`Player Volume:`, json.player.volume)
+    })
+
+    socket.on("close", () => {
+        console.log("Client disconnected")
+    })
+})
+```
+
 # FAQ
 ## Why?
 The Web API is good, but it has its pitfalls.
