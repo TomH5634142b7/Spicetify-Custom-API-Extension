@@ -1,0 +1,1 @@
+# Spicetify-Custom-API-Extension
