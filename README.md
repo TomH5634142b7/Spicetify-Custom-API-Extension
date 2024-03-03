@@ -15,6 +15,8 @@ For example:
 
 Player position & song duration are in milliseconds to allow for more customisable humanised formatting options.
 
+You may need to convert the string back into a JSON object when your websocket server receives the data, for example using `const json = JSON.parse(data)` for Node.js servers.
+
 # FAQ
 ## Why?
 The Web API is good, but it has its pitfalls.
