@@ -11,10 +11,10 @@ Click [here](https://github.com/TomH5634142b7/Spotify-Integration-Stream-Deck-Pl
 # Installation & Usage
 ## Installation
 
-## Usage
+## Stream Deck Usage
 If you're using this extension with the Stream Deck plugin you can download and install the plugin from the [plugin GitHub repo](https://github.com/TomH5634142b7/Spotify-Integration-Stream-Deck-Plugin) or from the ~~Elgato marketplace~~ (Coming soon) and the plugin will handle everything for you.
 
-
+## Developer Usage
 If you're developing your own program to communicate with Spotify, you'll need to create a websocket server listening to port 22157. Every 100ms the extension will send Spotify info to the websocket server in a stringified JSON format.
 For example:
 ```json
