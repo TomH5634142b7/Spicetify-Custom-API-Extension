@@ -18,7 +18,7 @@ If you're using this extension with the Stream Deck plugin you can download and 
 If you're developing your own program to communicate with Spotify, you'll need to create a websocket server listening to port 22157. Everytime there's a player update (song change, player position update, volume update, etc) the extension will send info from Spotify to the websocket server in a stringified JSON format.
 For example:
 ```json
-In progress
+{"player":{"context_uri":"spotify:playlist:6iLF2D9RrXpqClDhzYoOi1","entity_uri":"spotify:playlist:6iLF2D9RrXpqClDhzYoOi1","has_context":true,"is_buffering":false,"is_muted":false,"is_playing":true,"is_shuffling":false,"position":128099,"repeat_state":"queue","speed":1,"volume":100},"track":{"album":{"images":{"standard":"spotify:image:ab67616d00001e02312aa00d3fac2260cbd77288","small":"spotify:image:ab67616d00004851312aa00d3fac2260cbd77288","large":"spotify:image:ab67616d0000b273312aa00d3fac2260cbd77288","xlarge":"spotify:image:ab67616d0000b273312aa00d3fac2260cbd77288"},"name":"Call of the Wild (Deluxe Version)","uri":"spotify:album:6JhuNA7potIMg6r29IVULP"},"artists":[{"name":"Powerwolf","uri":"spotify:artist:5HFkc3t0HYETL4JeEbDB1v"}],"podcast":null,"name":"Alive or Undead","duration":263373,"marked_for_download":true,"uri":"spotify:track:3OdjiboTFoyrNIKRkLswuD","playlist_track_index":233,"is_liked":false,"is_19_plus_only":false,"is_explicit":false,"is_local":false,"has_lyrics":true,"media_type":"audio","provider":"context","type":"track"},"queue":{"next_tracks":[]},"scapi_version":"1.0.0"}
 ```
 Player position & song duration are in milliseconds to allow for more customisable humanised formatting options.
 
@@ -46,7 +46,7 @@ wss.on("connection", socket => {
 
 Podcast data is stored in the "podcast" object. For example, this is what will be returned for podcasts:
 ```json
-In progress
+{"player":{"context_uri":"spotify:show:2X40qLyoj1wQ2qE5FVpA7x","entity_uri":"spotify:show:2X40qLyoj1wQ2qE5FVpA7x","has_context":true,"is_buffering":false,"is_muted":false,"is_playing":true,"is_shuffling":false,"position":633289,"repeat_state":"off","speed":1,"volume":100},"track":{"album":{"images":{"standard":null,"small":null,"large":null,"xlarge":null}},"podcast":{"images":{"standard":"spotify:image:ab67656300005f1ff4e1783e86523c362b5489d8","small":"spotify:image:ab6765630000f68df4e1783e86523c362b5489d8","large":"spotify:image:ab6765630000ba8af4e1783e86523c362b5489d8","xlarge":"spotify:image:ab6765630000ba8af4e1783e86523c362b5489d8"},"name":"Distractible","uri":"spotify:show:2X40qLyoj1wQ2qE5FVpA7x"},"name":"Mark Is A Visionary [Bonus Episode]","duration":1200421,"marked_for_download":false,"uri":"spotify:episode:2wqWgWgXoVhW2d9bDFqgzA","playlist_track_index":4,"is_liked":false,"is_19_plus_only":false,"is_explicit":true,"has_lyrics":false,"media_type":"mixed","provider":"context","type":"episode"},"queue":{"next_tracks":[]},"scapi_version":"1.0.0"}
 ```
 
 # FAQ
