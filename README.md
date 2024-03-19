@@ -1,7 +1,7 @@
 # ⚠️ This is far from complete.
 This repo is here to show what's to come.
 
-I will be publishing the extension here shortly after adding a few more features & working out the kinks.
+The extension code is not 100% complete and will be missing features for the time being. If you'd like to use this extension before completion, I would recommend making sure you have everything you need and stay updated on this repo.
 
 # Spicetify Custom API Extension
 This extension was built to integrate the Stream Deck into Spotify without needing to use the Spotify Web API.
