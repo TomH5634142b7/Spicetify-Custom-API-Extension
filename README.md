@@ -1,6 +1,6 @@
 # ⚠️ This is far from complete.
 This repo is here to show what's to come.
-
+<br>
 The extension code is not 100% complete and will be missing features for the time being. If you'd like to use this extension before completion, I would recommend making sure you have everything you need and stay updated on this repo.
 
 # Spicetify Custom API Extension
@@ -10,6 +10,23 @@ Click [here](https://github.com/TomH5634142b7/Spotify-Integration-Stream-Deck-Pl
 
 # Installation & Usage
 ## Installation
+Before we get started, you must have Spicetify installed. If you do not have Spicetify, please follow [the official Spicetify guide here](https://spicetify.app/docs/getting-started).
+
+### Spicetify Marketplace (*DOES NOT APPLY YET*)
+- **⚠️ We are currently not on the Spicetify Marketplace, this is only here for future reference for when we publish the extension**
+
+Before getting started, ensure that you have the Spicetify marketplace installed by opening Spotify. When Spotify loads you should see a "Marketplace" tab below "Search" indicating that you have it installed. If you do not have this tab, please make sure you installed the marketplace from [the official Spicetify guide](https://spicetify.app/docs/getting-started).
+
+Click on the "Marketplace" tab and make sure the "Extensions" tab is selected.
+
+Afterwards click on the "Search Extensions..." textbox and type in "Custom WebSocket API", highlight over the extension and click on the full white install button.
+
+This will ask you to reload Spotify, click on "Reload Now" and now it'll start automatically trying to connect to WebSocket servers on port 22157.
+
+To see how to use this, check the [Stream Deck Usage](#stream-deck-usage) section if you're using this with the Stream Deck or the [Developer Usage](#developer-usage) section if you're creating your own WebSocket server.
+
+### Manual Installation
+WIP
 
 ## Stream Deck Usage
 If you're using this extension with the Stream Deck plugin you can download and install the plugin from the [plugin GitHub repo](https://github.com/TomH5634142b7/Spotify-Integration-Stream-Deck-Plugin) or from the ~~Elgato marketplace~~ (Coming soon) and the plugin will handle everything for you.
