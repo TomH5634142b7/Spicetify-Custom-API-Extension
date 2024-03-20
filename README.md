@@ -1,15 +1,33 @@
 # ⚠️ This is far from complete.
 This repo is here to show what's to come.
-
+<br>
 The extension code is not 100% complete and will be missing features for the time being. If you'd like to use this extension before completion, I would recommend making sure you have everything you need and stay updated on this repo.
 
 # Spicetify Custom API Extension
 This extension was built to integrate the Stream Deck into Spotify without needing to use the Spotify Web API.
-
+<br>
 Click [here](https://github.com/TomH5634142b7/Spotify-Integration-Stream-Deck-Plugin) for the Spotify integration Stream Deck plugin.
 
 # Installation & Usage
 ## Installation
+Before we get started, you must have Spicetify installed. If you do not have Spicetify, please follow [the official Spicetify guide here](https://spicetify.app/docs/getting-started).
+
+### Spicetify Marketplace (*DOES NOT APPLY YET*)
+- **⚠️ We are currently not on the Spicetify Marketplace, this is only here for future reference for when we publish the extension**
+
+Before getting started, ensure that you have the Spicetify marketplace installed by opening Spotify. When Spotify loads you should see a "Marketplace" tab below "Search" indicating that you have it installed. If you do not have this tab, please make sure you installed the marketplace from [the official Spicetify guide](https://spicetify.app/docs/getting-started).
+
+Click on the "Marketplace" tab and make sure the "Extensions" tab is selected.
+
+Afterwards click on the "Search Extensions..." textbox and type in "Custom WebSocket API", highlight over the extension and click on the full white install button.
+
+This will ask you to reload Spotify, click on "Reload Now" and now it'll start automatically trying to connect to WebSocket servers on port 22157.
+
+To see how to use this, check the [Stream Deck Usage](#stream-deck-usage) section if you're using this with the Stream Deck or the [Developer Usage](#developer-usage) section if you're creating your own WebSocket server.
+<br>
+If there's another program you're installing that depends on this extension, you'll have to refer to their guide as I am not affiliated with any of them.
+
+### Manual Installation (*WIP*)
 
 ## Stream Deck Usage
 If you're using this extension with the Stream Deck plugin you can download and install the plugin from the [plugin GitHub repo](https://github.com/TomH5634142b7/Spotify-Integration-Stream-Deck-Plugin) or from the ~~Elgato marketplace~~ (Coming soon) and the plugin will handle everything for you.
@@ -53,23 +71,23 @@ Podcast data is stored in the "podcast" object. For example, this is what will b
 ## Why?
 The Web API is good, but it has its pitfalls.
 
-You have to always be online and BarRaider's Spotify plugin for the Stream Deck is pretty delayed to avoid Web API rate-limits.
+You have to always be online and Stream Deck Spotify plugins can be delayed to avoid Web API rate-limits.
 
 Because of this, I decided to make this extension to go with my own custom Stream Deck plugin.
 
 ## Why not use WebNowPlaying?
 Using WebNowPlaying was my original goal, but I later realised this may cause compatibility issues with Rainmeter due to the same port (8974) being used for both websocket servers.
 
-Instead of looking for other ways to use WebNowPlaying, I realised I could make something that works for more than just me. A more developer-friendly Spotify websocket API.
+Instead of looking for other ways to integrate WebNowPlaying into my Stream Deck plugin, I realised I could make something that gives other developers more freedom.
 
 ## Why send so much data over to the websocket server?
 Even though my Stream Deck plugin requires very little data, I can see other projects having a wide variety of use-cases that may benefit from the extra data.
-
-I do get that some of the data is probably highly unnecessary, but you never know. My goal for this project is to create a developer-friendly API that just works without that much hassle.
+<br>
+I do get that some of the data is probably highly unnecessary, but you never know who might need it.
 
 ## What if I want to create an external websocket server for Spicetify to send info to?
-You'll need to fork this repository and then modify the `new WebSocket("ws://localhost:22157")` line to `new WebSocket("ws://your-domain/your-websocket-path")`.
+You'll need to clone or fork this repository and then modify the `new WebSocket("ws://localhost:22157")` line to `new WebSocket("ws://your-domain/your-websocket-path")`.
 
-To optimise speed and bandwidth usage, you can then remove data you won't be using in the `SendUpdate()` function.
+To optimise speed and bandwidth usage, you can then remove data you won't be using in the `SendUpdate()` function. Please be aware that if you decide to add something to this function, you will need a way to tell your users that their version is outdated.
 
 **Note**: I do not know if external websocket servers actually work with this project; I designed this to be used locally & have never tested it externally.
